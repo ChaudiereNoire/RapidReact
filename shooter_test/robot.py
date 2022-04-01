@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-    This is a demo program showing how to use Mecanum control with the
-    MecanumDrive class.
+    This is a demo program showing how to run a couple of motors for a
+    simple shooter.
 
-    Since the team has decided to build a wedge, this code is going to
-    have to be modified to use only three motors.
+    The last mod was just made to show how to introduce logging.  I only
+    noticed the aged comments when I double checked the file on gihub.
 """
 
 import logging
