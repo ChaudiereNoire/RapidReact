@@ -23,15 +23,19 @@ class Drivetrain(commands2.SubsystemBase):
         # PWM channels 0 and 1 respectively
         self.leftMotor = wpilib.Spark(0)
         self.rightMotor = wpilib.Spark(1)
-        # The new controller is connected to PWM channel
+
+        # The new controller is connected to PWM channel 2, EXT3
+        # Its Phase Pin (Direction Control) is DIO 11, EXT4
         self.rearMotor = wpilib.Spark(2)
 
         # The Romi has onboard encoders that are hardcoded
         # to use DIO pins 4/5 and 6/7 for the left and right
         self.leftEncoder = wpilib.Encoder(4, 5)
         self.rightEncoder = wpilib.Encoder(6, 7)
-        # Encoders from the third motor are connected to EXT 3 & 4
-        self.rearEncoder = wpilib.Encoder(10,11)
+
+        # Encoders from the third motor are connected to EXT 0 & 1
+        # Romi definitions to make them DIO pins set in Web Interface
+        self.rearEncoder = wpilib.Encoder(8,9)
 
         # Set up the Killough drive controller
         self.drive = wpilib.drive.KilloughDrive(self.leftMotor, self.rightMotor, self.rearMotor)

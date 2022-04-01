@@ -82,7 +82,7 @@ class RobotContainer:
         """
         return CartesianDrive(
             self.drivetrain,
+            lambda: self.controller.getRawAxis(0),
             lambda: self.controller.getRawAxis(1),
-            lambda: self.controller.getRawAxis(2),
             lambda: self.controller.getRawAxis(4)
         )
